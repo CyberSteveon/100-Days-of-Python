@@ -1,5 +1,6 @@
 # The code is for reeborg's world link is below.
 # It does solve the puzzle
+# Goal is to practice creating functions and using loops
 # Further troubleshoot is needed for it to be perfect
 
 ## https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Maze&url=worlds%2Ftutorial_en%2Fmaze1.json

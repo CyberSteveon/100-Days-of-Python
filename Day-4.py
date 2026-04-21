@@ -1,5 +1,6 @@
 import random
-
+# A rock, paper, scizzors game
+# Goal is to practice logical operators
 rock = """
     _______
 ---'   ____)

@@ -1,3 +1,6 @@
+# A small game for finding treasure - Takes choice based inputs
+# Goal is for if statement practice
+
 print("Welcome to treasure Island! Lets see if you can get to the treasure.")
 
 direction = input('You\'re at a forked road, would you like to go "left" or "right"? ').lower()
