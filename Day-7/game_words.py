@@ -1,0 +1,10 @@
+word_list = [ "python", "hangman", "computer", "keyboard", "monitor",
+    "programming", "developer", "function", "variable", "loop",
+    "condition", "syntax", "compile", "execute", "debug",
+    "algorithm", "database", "network", "security", "encryption",
+    "firewall", "packet", "server", "client", "protocol",
+    "internet", "software", "hardware", "application", "system",
+    "process", "thread", "memory", "storage", "virtual",
+    "cloud", "container", "docker", "kubernetes", "script",
+    "automation", "terminal", "command", "repository", "version",
+    "branch", "commit", "merge", "deploy", "testing" ]
