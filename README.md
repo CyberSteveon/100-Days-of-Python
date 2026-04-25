@@ -12,15 +12,34 @@ This repository contains my final project submissions for each day of the course
 
 ## 📂 Structure
 
+Days that are a single script live as one `.py` file in their folder.
+Days that require modules — like Day 7's Hangman — contain multiple `.py` files.
+
 ```
 100-days-of-python/
-├── day-001/
-├── day-002/
+├── Day-1/
+│   └── Day-1.py
+├── Day-2/
+│   └── Day-2.py
+├── Day-3/
+│   └── Day-3.py
+├── Day-4/
+│   └── Day-4.py
+├── Day-5/
+│   └── Day-5.py
+├── Day-6/
+│   └── Day-6.py
+├── Day-7/
+│   ├── Day-7.py          # main entry point
+│   ├── ascii_art.py      # hangman stage visuals
+│   ├── game_words.py     # word list
+│   └── README.md
 ├── ...
-└── day-100/
+└── Day-100/
 ```
 
-Each folder is named by day and contains the final project for that lesson.
+> Days that introduce modules, external files, or additional assets will follow
+> the multi-file pattern. Single concept days stay as one file.
 
 ---
 
@@ -47,24 +66,19 @@ Each folder is named by day and contains the final project for that lesson.
 
 ```bash
 git clone https://github.com/CyberSteveon/100-days-of-python.git
-cd 100-days-of-python/day-001
-python main.py
+cd 100-days-of-python/Day-7
+python Day-7.py
 ```
 
 ---
 
 ## 📈 Progress
 
-- [ ] Days 1–10
-- [ ] Days 11–20
-- [ ] Days 21–30
-- [ ] Days 31–40
-- [ ] Days 41–50
-- [ ] Days 51–60
-- [ ] Days 61–70
-- [ ] Days 71–80
-- [ ] Days 81–90
-- [ ] Days 91–100
+- [ ] Days 1–14 — Beginner
+- [ ] Days 15–31 — Intermediate
+- [ ] Days 32–57 — Intermediate+
+- [ ] Days 58–80 — Advanced
+- [ ] Days 81–100 — Professional
 
 ---
 

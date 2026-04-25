@@ -1,4 +1,4 @@
-# Day 7 – Hangman: My Solution vs Best Practices
+# 🐍 Day 7 – Hangman: My Solution vs Best Practices
 
 ---
 
@@ -18,11 +18,11 @@ understand the tradeoffs and design decisions behind each approach.
 - Used `correct_letters` as a global list accessible inside the function
 - Printed the hint inside the function immediately after the player guesses
 - Used a `while` loop with a direct condition: `while guess_chances > 0 and result != chosen_word`
-- Tracked duplicate guesses by checking `if guess in correct_letters` before appending
+- Tracked duplicate guesses by checking `if guess in correct_letters` before appending with an early return
 
 ---
 
-## Instructor / Best Practice Solution (Summary)
+##  Instructor / Best Practice Solution (Summary)
 
 - Used a simpler loop structure with a `game_over = False` boolean flag
 - Controlled loop exit by setting `game_over = True` inside `if` blocks
@@ -32,38 +32,35 @@ understand the tradeoffs and design decisions behind each approach.
   - `if letter == guess` — current guess match
   - `elif letter in correct_letters` — previously guessed letter
   - `else` — underscore
+- Handled duplicate guesses with `if guess in correct_letters` and printed a dynamic message with the repeated letter
 - Kept input, display logic, and game state all in the main loop without a separate function
 
 ---
 
 ## Key Differences
 
-```
-+----------------------+-----------------------------+----------------------------+
-| Area                 | My Approach                 | Instructor Approach        |
-+----------------------+-----------------------------+----------------------------+
-| Loop control         | while condition directly    | boolean flag game_over     |
-| Display function     | yes, returns tuple          | no function, inline loop   |
-| Duplicate check      | before append, early return | not always handled         |
-| Win condition        | result == chosen_word       | "_" not in display         |
-| Hint printing        | inside function             | inside main loop           |
-| Return values        | tuple of 3                  | no return needed           |
-+----------------------+-----------------------------+----------------------------+
-```
+| Area | My Approach | Instructor Approach |
+|------|-------------|---------------------|
+| Loop control | `while` condition directly | boolean flag `game_over` |
+| Display function | yes, returns tuple | no function, inline loop |
+| Duplicate check | before append, early return | `if guess in correct_letters`, print message |
+| Win condition | `result == chosen_word` | `"_" not in display` |
+| Hint printing | inside function | inside main loop |
+| Return values | tuple of 3 | no return needed |
 
 ---
 
 ## Win Condition Comparison
 
 **My approach:**
-```
+```python
 result == chosen_word
 ```
 Compares the fully revealed display string directly to the chosen word.
 Works because when every letter is guessed, display and chosen_word are identical.
 
 **Instructor approach:**
-```
+```python
 "_" not in display
 ```
 Checks if any blanks remain. If no underscores exist, all letters are revealed.
@@ -74,7 +71,7 @@ Slightly more flexible — works regardless of what the word is.
 ## Loop Control Comparison
 
 **My approach — direct condition:**
-```
+```python
 while guess_chances > 0 and result != chosen_word:
     ...
 ```
@@ -82,7 +79,7 @@ Clean and concise. Both exit conditions live in one place.
 Harder to extend if more ending conditions are added later.
 
 **Instructor approach — boolean flag:**
-```
+```python
 game_over = False
 while not game_over:
     if lives == 0:
@@ -95,22 +92,22 @@ where many different events can end the game.
 
 ---
 
-## Display Logic Comparison
+##  Display Logic Comparison
 
 **My approach — check history list:**
-```
+```python
 for letter in chosen_word:
     if letter in correct_letters:
         display += letter
     else:
         display += "_"
 ```
-Appends guess to correct_letters before the loop runs.
+Appends guess to `correct_letters` before the loop runs.
 One condition handles both current and previous guesses.
 Cleaner and more concise.
 
 **Instructor approach — check current and history separately:**
-```
+```python
 for letter in chosen_word:
     if letter == guess:
         display += letter
@@ -120,15 +117,15 @@ for letter in chosen_word:
     else:
         display += "_"
 ```
-Appends inside the loop. Needs the elif to handle previously guessed letters.
+Appends inside the loop. Needs the `elif` to handle previously guessed letters.
 More explicit but requires an extra branch.
 
 ---
 
-## What My Solution Did Well
+##  What My Solution Did Well
 
 - Cleaner display logic — one condition instead of three
-- Proper duplicate handling with early return
+- Proper duplicate handling with early return before append
 - Tuple unpacking to pass state cleanly in and out of a function
 - Direct while condition that reads clearly
 
